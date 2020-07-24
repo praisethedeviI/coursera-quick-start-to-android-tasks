@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">first_task</string>
+    <string name="app_name">second_task</string>
     <string name="textEdit_hint">Print text</string>
     <string name="button_text">Click</string>
 </resources>
