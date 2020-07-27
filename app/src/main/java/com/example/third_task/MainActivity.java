@@ -1,0 +1,40 @@
+package com.example.third_task;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    private EditText mEditText;
+    private Button mBtnToSecondActivity;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mEditText = findViewById(R.id.editText);
+        mBtnToSecondActivity = findViewById(R.id.btn_to_second_ac);
+
+
+        mBtnToSecondActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!TextUtils.isEmpty(mEditText.getText())) {
+                    Toast.makeText(MainActivity.this, mEditText.getText(), Toast.LENGTH_SHORT).show();
+                    Intent startProfileIntent = new Intent(MainActivity.this, SecondActivity.class);
+                    startProfileIntent.putExtra(SecondActivity.TEXT, mEditText.getText().toString());
+                    startActivity(startProfileIntent);
+                }
+            }
+        });
+    }
+}
