@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">4week2task</string>
+    <string name="settings">Настройки</string>
+    <string name="search">Поиск</string>
+    <string name="exit">Выход</string>
+    <string name="google_text">Google</string>
+    <string name="yandex_text">Yandex</string>
+    <string name="bing_text">Bing</string>
+    <string name="text_search_hint">Текст в поисковике</string>
+</resources>
