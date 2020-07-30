@@ -56,11 +56,19 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.settings:
                 showMessage(R.string.settings);
-                replaceFragment(SettingsFragment.newInstance());
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragmentContainer, SettingsFragment.newInstance())
+                        .addToBackStack(SettingsFragment.class.getName())
+                        .commit();
                 break;
             case R.id.search:
                 showMessage(R.string.search);
-                replaceFragment(SearchFragment.newInstance());
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragmentContainer, SearchFragment.newInstance())
+                        .addToBackStack(SearchFragment.class.getName())
+                        .commit();
                 break;
             case R.id.exit:
                 showMessage(R.string.exit);
